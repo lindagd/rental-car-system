@@ -1,0 +1,10 @@
+-- exibir somente os clientes que realizaram mais ou igual a 2 locações.
+SELECT CUSTOMERS.ID,
+       CUSTOMERS.NAME,
+       CUSTOMERS.LASTNAME,
+       COUNT(*) AS LOCATIONS_COUNT
+FROM CUSTOMERS
+  INNER JOIN LOCATIONS AS L
+    ON CUSTOMERS.ID = L.CUSTOMER_ID
+GROUP BY CUSTOMERS.ID
+HAVING COUNT(*) >= 2;

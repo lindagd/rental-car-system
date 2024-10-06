@@ -1,0 +1,4 @@
+-- exibir todos os funcionários e seus respectivos cargos
+SELECT EMPLOYEES.*, POSITIONS.DESCRIPTION
+  FROM EMPLOYEES
+  INNER JOIN POSITIONS ON (EMPLOYEES.POSITION_ID = POSITIONS.ID);
